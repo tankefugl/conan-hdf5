@@ -10,7 +10,7 @@ class Hdf5Conan(ConanFile):
     license = "BSD-3-Clause"
     topics = ("conan", "hdf5", "hdf", "data")
     homepage = "https://portal.hdfgroup.org/display/HDF5/HDF5"
-    url = "https://github.com/conan-io/conan-center-index"
+    url = "https://github.com/sinef-ocean/conan-hdf5"
     exports_sources = ["CMakeLists.txt", "patches/**"]
     generators = "cmake"
     settings = "os", "arch", "compiler", "build_type"
@@ -22,17 +22,19 @@ class Hdf5Conan(ConanFile):
         "threadsafe": [True, False],
         "with_zlib": [True, False],
         "szip_support": [None, "with_libaec", "with_szip"],
-        "szip_encoding": [True, False]
+        "szip_encoding": [True, False],
+        "allow_unsupported": [True, False]
     }
     default_options = {
         "shared": False,
         "fPIC": True,
         "enable_cxx": True,
         "hl": True,
-        "threadsafe": False,
+        "threadsafe": True,
         "with_zlib": True,
         "szip_support": None,
-        "szip_encoding": False
+        "szip_encoding": False,
+        "allow_unsupported": True
     }
 
     _cmake = None
@@ -95,7 +97,7 @@ class Hdf5Conan(ConanFile):
         self._cmake.definitions["HDF5_EXTERNAL_LIB_PREFIX"] = ""
         self._cmake.definitions["HDF5_USE_FOLDERS"] = False
         self._cmake.definitions["HDF5_NO_PACKAGES"] = True
-        self._cmake.definitions["ALLOW_UNSUPPORTED"] = False
+        self._cmake.definitions["ALLOW_UNSUPPORTED"] = self.options.allow_unsupported
         if tools.Version(self.version) >= "1.10.6":
             self._cmake.definitions["ONLY_SHARED_LIBS"] = self.options.shared
         self._cmake.definitions["BUILD_STATIC_EXECS"] = False
