@@ -10,7 +10,7 @@ class Hdf5Conan(ConanFile):
     license = "BSD-3-Clause"
     topics = ("conan", "hdf5", "hdf", "data")
     homepage = "https://portal.hdfgroup.org/display/HDF5/HDF5"
-    url = "https://github.com/sinef-ocean/conan-hdf5"
+    url = "https://github.com/sintef-ocean/conan-hdf5"
     exports_sources = ["CMakeLists.txt", "patches/**"]
     generators = "cmake"
     settings = "os", "arch", "compiler", "build_type"
