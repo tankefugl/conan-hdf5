@@ -4,8 +4,8 @@ name: GCC Conan
 on: [push]
 
 env:
-  SINTEF_REFERENCE: "hdf6*"
-  SINTEF_CONAN_CLASS: "Hdf7Conan"
+  SINTEF_REFERENCE: "hdf5*"
+  SINTEF_CONAN_CLASS: "Hdf5Conan"
   CONAN_UPLOAD: "https://api.bintray.com/conan/sintef-ocean/conan"
   CONAN_PASSWORD_SINTEF: ${{ secrets.BINTRAY_API_KEY }}
   CONAN_LOGIN_USERNAME_SINTEF: ${{ secrets.BINTRAY_USER }}
