@@ -40,7 +40,7 @@ jobs:
           conan create -s build_type=${{ matrix.build_type }} `
             -s compiler.toolset=${{ matrix.compiler_toolset }} `
             -s compiler.version=${{ matrix.compiler_version }} `
-            -b missing . 1.8.21@sintef/stable
+            -b missing . sintef/stable
       - name: Conan upload
         run: |
           conan upload --all -c -r sintef ${env:SINTEF_REFERENCE} --retry 10 --force
