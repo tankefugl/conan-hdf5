@@ -7,7 +7,8 @@ from conans.errors import ConanInvalidConfiguration
 class Hdf5Conan(ConanFile):
     name = "hdf5"
     description = "HDF5 is a data model, library, and file format for storing and managing data."
-    license = "BSD-3-Clause"
+    license = "BSD 3-Clause"
+    version = "1.8.21"
     topics = ("conan", "hdf5", "hdf", "data")
     homepage = "https://portal.hdfgroup.org/display/HDF5/HDF5"
     url = "https://github.com/sintef-ocean/conan-hdf5"

@@ -19,10 +19,10 @@ def main(argvs):
 
     info = dict()
     info['desc'] = pkg.description
-    #info['licenses'] = [pkg.license]
-    #info['vcs_url'] = pkg.url
-    #info['website_url'] = pkg.homepage
-    #info['labels'] = list(pkg.topics)
+    info['licenses'] = [pkg.license]
+    info['vcs_url'] = pkg.url
+    info['website_url'] = pkg.homepage
+    info['labels'] = list(pkg.topics)
 
     url = 'https://api.bintray.com/packages/sintef-ocean/conan/{}%3asintef' \
         .format(pkg.name)
