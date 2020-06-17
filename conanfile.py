@@ -143,8 +143,6 @@ class Hdf5Conan(ConanFile):
         self.copy("COPYING", dst="licenses", src=self._source_subfolder)
         cmake = self._configure_cmake()
         cmake.install()
-        tools.rmdir(os.path.join(self.package_folder, "lib", "pkgconfig"))
-        os.remove(os.path.join(self.package_folder, "lib", "libhdf5.settings"))
 
     def package_info(self):
         self.cpp_info.names["cmake_find_package"] = "HDF5"
