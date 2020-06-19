@@ -57,7 +57,7 @@ class Hdf5Conan(ConanFile):
         if not self.options.enable_cxx:
             del self.settings.compiler.libcxx
             del self.settings.compiler.cppstd
-        if self.options.enable_cxx or self.options.hl or (self.settings.os == "Windows" and not self.options.shared):
+        if not self.options.allow_unsupported and (self.options.enable_cxx or self.options.hl or (self.settings.os == "Windows" and not self.options.shared)):
             del self.options.threadsafe
         if not bool(self.options.szip_support):
             del self.options.szip_encoding
