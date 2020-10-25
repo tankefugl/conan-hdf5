@@ -1,7 +1,7 @@
 name: MSVC Conan
 
 # This workflow is triggered on pushes to the repository.
-on: [push]
+on: [push, workflow_dispatch]
 
 env:
   SINTEF_REFERENCE: "hdf5*"
